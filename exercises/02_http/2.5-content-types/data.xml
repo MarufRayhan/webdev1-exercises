@@ -1,0 +1,10 @@
+<?xml version='1.0' encoding='utf-8'?>
+
+<nature title="Nature's miracles">
+    <animal>
+        <species>Ailuropoda melanoleuca</species>
+    </animal>
+    <plant>
+        <species>Aesculus hippocastanum</species>
+    </plant>
+</nature>

@@ -82,7 +82,7 @@ describe('Hi Mocha tests', function() {
       });
     });
 
-    it('should return maxPoints/2 when answer contains "Hi" but not "Mocha!"', function() {
+    it('should return maxPoints/5 when answer contains "Hi" but not "Mocha!"', function() {
       const answers = [
         { value: 'hi' },
         { value: 'HI' },
@@ -99,7 +99,7 @@ describe('Hi Mocha tests', function() {
       });
     });
 
-    it('should return maxPoints when answer contains both "Mocha!" and "HELLO"', function() {
+    it('should return maxPoints when answer contains both "Mocha!" and "Hi"', function() {
       const answers = [
         { value: 'hiMocha!' },
         { value: 'Mocha!HI' },
