@@ -8,7 +8,7 @@ http.createServer(function(request, response) {
       response.writeHead(404);
       response.write('An error occured: ', error);
     } else {
-      response.writeHead(200, { 'Content-Type': 'index.html' });
+      response.writeHead(200, { 'Content-Type': 'text/html' });
       response.write(htmlPage);
     }
     response.end();
