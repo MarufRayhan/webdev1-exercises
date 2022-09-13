@@ -31,9 +31,9 @@ http.createServer((request, response)=>{
             console.log(err)
         });
 
-        response.setHeader('Content-Type', 'application/json');
+        response.setHeader('Content-Type', 'text/html');
    
-        response.writeHead(200, {'Content-Type': 'application/json'})
+        response.writeHead(200, {'Content-Type': 'text/html'})
         const responseBody = { headers, method, url, body };
 
         response.write(JSON.stringify(responseBody));
