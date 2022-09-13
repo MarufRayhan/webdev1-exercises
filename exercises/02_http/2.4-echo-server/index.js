@@ -7,10 +7,11 @@ http.createServer((req, res) => {
     req.on('data', (chunk) => {
         body.push(chunk);
       }).on('end', () => {
-        body = Buffer.concat(body).toString();
-        res.end(body)
+        body = Buffer.concat(body).reverse().toString();
+        console.log("body",body)
+        res.write(body)
+        res.end()
       })
 
-      res.end();
 
 }).listen(3000);
