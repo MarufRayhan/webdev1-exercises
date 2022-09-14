@@ -16,7 +16,7 @@ http.createServer(function(request, response) {
     readFileSendResponse('homer.html', 'text/html', response);
   }
   else {
-    response.statusCode = 404;
+    response.statusCode = 200;
     response.statusMessage = 'Requested content not found';
     response.end();
   }
@@ -25,7 +25,7 @@ http.createServer(function(request, response) {
 const readFileSendResponse = (fileName, contentType, response) => {
   fs.readFile(path.resolve(fileName), function(error, file) {
     if (error) {
-      response.writeHead(404);
+      response.writeHead(200);
       response.write('An error occured: ', error);
     } else {
       response.writeHead(200, { 'Content-Type': contentType });
