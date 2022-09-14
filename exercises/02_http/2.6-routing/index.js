@@ -16,17 +16,17 @@ http.createServer(function(request, response) {
     readFileSendResponse('homer.html', 'text/html', response);
   }
   else {
-    response.statusCode = 200;
+    response.statusCode = 404;
     response.statusMessage = 'Requested content not found';
-    response.end();
+    response.end(response.statusMessage);
   }
 }).listen(3000);
 
 const readFileSendResponse = (fileName, contentType, response) => {
   fs.readFile(path.resolve(fileName), function(error, file) {
     if (error) {
-      response.writeHead(200);
-      response.write('An error occured: ', error);
+        response.writeHead(404);
+        response.write('Requested content not found');
     } else {
       response.writeHead(200, { 'Content-Type': contentType });
       response.write(file);
