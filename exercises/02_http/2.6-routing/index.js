@@ -26,8 +26,9 @@ http.createServer(function(request, response) {
 const readFileSendResponse = (fileName, contentType, response) => {
   fs.readFile(path.resolve(fileName), function(error, file) {
     if (error) {
-        response.writeHead(404);
-        response.write('Requested content not found');
+        response.writeHead(404, { 'Content-Type':'text/plain'});
+        response.end("Requested content not found")
+        // response.write('Requested content not found');
     } else {
       response.writeHead(200, { 'Content-Type': contentType });
       response.write(file);
