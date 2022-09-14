@@ -16,7 +16,7 @@ http.createServer(function(request, response) {
     readFileSendResponse('homer.html', 'text/html', response);
   }
   else {
-    response.statusCode = 404;
+    response.statusCode = 200;
     response.statusMessage = 'Requested content not found';
     response.end(response.statusMessage);
   }
