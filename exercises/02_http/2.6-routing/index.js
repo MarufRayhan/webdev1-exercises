@@ -24,7 +24,7 @@ const server = http.createServer((req,res)=>{
                 res.write('Requested content not found',err)
             }
             else{
-                res.writeHead(200,{'Content-Type':'text.html'});
+                res.writeHead(200,{'Content-Type':'text/html'});
                 res.write(pagersp);
             }
             res.end();
@@ -37,7 +37,7 @@ const server = http.createServer((req,res)=>{
                 res.write('Requested content not found',err)
             }
             else{
-                res.writeHead(200,{'Content-Type':'text.html'});
+                res.writeHead(200,{'Content-Type':'text/html'});
                 res.write(pagersp);
             }
             res.end();
@@ -50,7 +50,7 @@ const server = http.createServer((req,res)=>{
                 res.write('Requested content not found',err)
             }
             else{
-                res.writeHead(200,{'Content-Type':'text.html'});
+                res.writeHead(200,{'Content-Type':'text/html'});
                 res.write(pagersp);
             }
             res.end();
