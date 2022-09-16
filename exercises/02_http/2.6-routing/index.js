@@ -1,65 +1,37 @@
-const http = require('http')
-const fs = require("fs");
+const http = require('http');
+const fs = require('fs');
+const path = require('path');
 
+http.createServer(function(request, response) {
+    if (request.url === '/respond'){
+    response.writeHead(200, { 'Content-Type':'text/html'});
+    readFileSendResponse('index.html', 'text/html', response);
+  }
+  else if (request.url === '/dystopy'){
+    response.writeHead(200, { 'Content-Type':'text/html'});
+    readFileSendResponse('bradbury.html', 'text/html', response);
+  }
+  else if (request.url === '/classical'){
+    response.writeHead(200, { 'Content-Type':'text/html'});
+    readFileSendResponse('homer.html', 'text/html', response);
+  }
+  else {
+    response.statusCode = 404;
+    response.statusMessage = 'Requested content not found';
+    response.end(response.statusMessage);
+  }
+}).listen(3000);
 
-const server = http.createServer((req,res)=>{
-    if(req.url === "/"){
-        fs.readFile("index.html",(err,pagersp)=>{
-            if(err){
-                res.writeHead(404);
-                res.write('Requested content not found',err)
-
-            }
-            else {
-                res.writeHead(200,{'Content-Type':'text/html'});
-                res.write(pagersp)
-            }
-            res.end();
-        })
+const readFileSendResponse = (fileName, contentType, response) => {
+  fs.readFile(path.resolve(fileName), function(error, file) {
+    if (error) {
+        response.writeHead(404);
+        response.write('Requested content not found');
+    } else {
+      response.writeHead(200, { 'Content-Type': contentType });
+      response.write(file);
     }
-    else if(req.url==="/classical"){
-        fs.readFile("homer.html",(err,pagersp)=>{
-            if(err){
-                res.writeHead(404);
-                res.write('Requested content not found',err)
-            }
-            else{
-                res.writeHead(200,{'Content-Type':'text.html'});
-                res.write(pagersp);
-            }
-            res.end();
-        })
-    }
-    else if(req.url==="/dystopy"){
-        fs.readFile("bradbury.html",(err,pagersp)=>{
-            if(err){
-                res.writeHead(404);
-                res.write('Requested content not found',err)
-            }
-            else{
-                res.writeHead(200,{'Content-Type':'text.html'});
-                res.write(pagersp);
-            }
-            res.end();
-        })
-    }
-    else if(req.url==="/ respond"){
-        fs.readFile("index.html",(err,pagersp)=>{
-            if(err){
-                res.writeHead(404);
-                res.write('Requested content not found',err)
-            }
-            else{
-                res.writeHead(200,{'Content-Type':'text.html'});
-                res.write(pagersp);
-            }
-            res.end();
-        })
-    }
-    else {
-        res.writeHead(404)
-        res.end()
-    }
-})
-
-server.listen(3000)
+    response.end();
+    
+  })
+}
