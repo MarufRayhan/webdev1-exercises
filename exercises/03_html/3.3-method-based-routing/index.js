@@ -18,7 +18,7 @@ const server = http.createServer((req,res)=>{
     }
     else if(req.method === "GET"){
         console.log("request is", req.method)
-        fs.readFile("post.html",(err,pagersp)=>{
+        fs.readFile("get.html",(err,pagersp)=>{
             if(err){
                 res.writeHead(404);
                 res.write('Requested content not found',err)
@@ -31,8 +31,8 @@ const server = http.createServer((req,res)=>{
         })
     }
     else {
-        res.writeHead(405, "Allow: GET, POST")
-        // res.writeHead("Allow: GET, POST")
+        // res.writeHead(405, "Allow: GET, POST")
+        res.writeHead(405,("Allow: GET, POST") ,{ 'Content-Type': 'text/plain' });
         res.end()
     }
 })
