@@ -1,6 +1,6 @@
 // 1
 const element = document.getElementsByClassName('navi')[0]
-element.classList.add('link');
+element.classList.add('list');
 // console.log(element)
 
 // 2
