@@ -1,0 +1,74 @@
+* {
+  margin: 0;
+  border-collapse: collapse;
+  box-sizing: border-box;
+}
+
+body {
+  display: grid;
+  grid-template-rows: min-content auto min-content;
+  /* TODO: modify the line below to add the needed grid-template-areas for header, main, and footer elements*/
+  grid-template-areas: "";
+  height: 100vh;
+}
+
+main {
+  background-color: antiquewhite;
+  width: 100%;
+  height: 100%;
+  grid-area: m;
+}
+
+header {
+  background-color: lavender;
+  width: 100%;
+  padding: 1.5rem;
+  grid-area: h;
+}
+
+article {
+  background-color: lightblue;
+  border: solid;
+  margin: 0;
+  display: grid;
+  /* TODO: modify the line below to add the needed grid-template-areas for sections and articles.
+  
+  For placing areas side-by-side, the syntax is simple, for example:
+    grid-template-areas:    "a1 b1"
+                            "a2 b2";
+  */
+  grid-template-areas: "";
+  height: 100%;
+}
+
+section {
+  border: solid;
+  /* box-sizing: border-box; */
+  margin: 0;
+}
+
+aside {
+  border: solid;
+  /* box-sizing: border-box; */
+  background-color: cornflowerblue;
+  margin: 0;
+}
+
+footer {
+  background-color: darkslategray;
+  grid-area: f;
+  display: grid;
+  /* TODO: modify the line below to add the needed grid-template-areas for the navigation elements*/
+  grid-template-areas: "";
+  padding: 1.5rem;
+}
+
+
+/* TODO: add the needed CSS rules below to set the required grid-area for each element with an ID, including the sections, asides, and navigation elements. 
+
+An example:
+#element_id {
+    grid-area: ONE_OF_GRID_TEMPLATE_AREAS;
+}
+
+*/
