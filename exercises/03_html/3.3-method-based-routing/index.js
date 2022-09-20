@@ -32,7 +32,11 @@ const server = http.createServer((req,res)=>{
     }
     else {
         // res.writeHead(405, "Allow: GET, POST")
-        res.writeHead(405,("Allow: GET, POST") ,{ 'Content-Type': 'text/plain' });
+        // res.writeHead(405,("Allow: GET, POST") ,{ 'Content-Type': 'text/plain' });
+        res.writeHead(200, 
+                {"Allow": GET, POST,
+                'Content-Type': 'text/plain',
+                });
         res.end()
     }
 })
