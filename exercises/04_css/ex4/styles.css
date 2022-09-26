@@ -9,9 +9,12 @@ body {
   grid-template-rows: min-content auto min-content;
   /* TODO: modify the line below to add the needed grid-template-areas for header, main, and footer elements*/
   grid-template-areas:
-    "header"
+    /* "header"
     "main"
-    "footer";
+    "footer"; */
+    "hd hd hd hd   hd   hd   hd   hd   hd"
+    "main main main main main main main main main"
+    "ft ft ft  ft  ft   ft   ft   ft   ft";
   height: 100vh;
 }
 
@@ -43,7 +46,7 @@ article {
   grid-template-areas:
     "sec1 aside1"
     "sec2 aside2"
-    "sec3 sec3";
+    "sec3 .";
   height: 100%;
 }
 
@@ -79,7 +82,7 @@ An example:
 */
 
 header {
-  grid-area: header;
+  grid-area: hd;
 }
 
 main {
@@ -87,7 +90,7 @@ main {
 }
 
 footer {
-  grid-area: footer;
+  grid-area: ft;
 }
 
 #sec1 {
