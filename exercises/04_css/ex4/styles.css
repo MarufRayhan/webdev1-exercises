@@ -3,7 +3,6 @@
   border-collapse: collapse;
   box-sizing: border-box;
 }
-
 body {
   display: grid;
   grid-template-rows: min-content auto min-content;
