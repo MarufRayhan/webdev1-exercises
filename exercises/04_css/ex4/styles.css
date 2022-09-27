@@ -9,9 +9,9 @@ body {
   grid-template-rows: min-content auto min-content;
   /* TODO: modify the line below to add the needed grid-template-areas for header, main, and footer elements*/
   grid-template-areas:
-    "h h"
-    "m m"
-    "f f";
+    "h"
+    "m"
+    "f";
   height: 100vh;
 }
 
