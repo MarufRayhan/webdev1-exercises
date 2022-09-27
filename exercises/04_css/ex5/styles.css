@@ -19,6 +19,7 @@ header {
   width: 100%;
   min-height: 15%;
   /* TODO: needed grid stuff */
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
 }
 
 section {
@@ -33,6 +34,7 @@ article {
   display: grid;
   font-size: 1.5em;
   /* TODO: needed grid stuff */
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
 }
 
 footer {
@@ -40,6 +42,7 @@ footer {
   width: 100%;
   min-height: 15%;
   /* TODO: needed grid stuff */
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
 }
 
 nav {
