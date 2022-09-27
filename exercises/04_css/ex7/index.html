@@ -1,56 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Demoing accessibility</title>
-</head>
+  </head>
 
-<body>
-    <h1>
-        Accessibility demo
-    </h1>
-    <ul>
+  <body>
+    <main aria-label="main">
+      <h1>Accessibility demo</h1>
+      <ul>
         <li>
-            <a href="https://google.com">Google</a>
+          <a href="https://google.com">Google</a>
         </li>
         <li>
-            <a href="https://tuni.com">TUNI</a>
+          <a href="https://tuni.com">TUNI</a>
         </li>
         <li>
-            <a href="https://plus.tuni.fi/">Plussa</a>
+          <a href="https://plus.tuni.fi/">Plussa</a>
         </li>
         <li>
-            <a href="https://www.mozilla.org/en-US/">Mozilla</a>
+          <a href="https://www.mozilla.org/en-US/">Mozilla</a>
         </li>
         <li>
-            <a href="https://www.google.com/chrome/">Chrome</a>
+          <a href="https://www.google.com/chrome/">Chrome</a>
         </li>
-    </ul>
-    <hr>
-    <h2 id="information">Your information</h2>
-    <form>
-        <p>Name:</p>
-        <input id="name" autocomplete="off">
-        <p>homePage:</p>
-        <input id="homePage" autocomplete="off">
-        <p>Email:</p>
-        <input id="email" autocomplete="off">
-        <p>Password:</p>
-        <input id="password" autocomplete="off">
-        <p>Favorite city</p>
-        <select id="favoriteCity" name="select">
-            <option value="1">Amsterdam</option>
-            <option value="2">London</option>
-            <option value="3">Moscow</option>
-            <option value="4">Los Angeles</option>
-            <option value="5">New York</option>
+      </ul>
+      <hr />
+      <h2 id="information">Your information</h2>
+      <form>
+        <label for="Name">Name:</label>
+        <input id="name" aria-label="name" autocomplete="off" />
+        <label for="homePage">homePage:</label>
+        <input id="homePage" aria-label="homepage" autocomplete="off" />
+        <label for="Email">Email:</label>
+        <input id="email" aria-label="email" autocomplete="off" />
+        <label for="Password">Password:</label>
+        <input id="password" aria-label="password" autocomplete="off" />
+        <label for="Favorite city">Favorite city:</label>
+        <select
+          id="favoriteCity"
+          aria-label="label for the select"
+          name="select"
+        >
+          <option value="1">Amsterdam</option>
+          <option value="2">London</option>
+          <option value="3">Moscow</option>
+          <option value="4">Los Angeles</option>
+          <option value="5">New York</option>
         </select>
-        <img src="submit.png" style="display:block; width: 200px; height: 200px;">
-    </form>
-
-</body>
-
+        <img
+          src="submit.png"
+          alt="submit logo"
+          style="display: block; width: 200px; height: 200px"
+        />
+      </form>
+    </main>
+  </body>
 </html>
