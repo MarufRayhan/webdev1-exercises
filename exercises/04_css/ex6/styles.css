@@ -145,7 +145,7 @@ An example:
     display: grid;
     grid-template-rows: min-content auto min-content;
     grid-template-columns: repeat(2, 1fr);
-    grid-template-areas: "h ." "m ." "f .";
+    grid-template-areas: "h h" "m m" "f f";
     height: 100vh;
   }
   article {
@@ -156,11 +156,11 @@ An example:
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: min-content auto min-content;
     grid-template-areas:
-      "sec1 ."
-      "sec2 ."
-      "sec3 ."
-      "aside1 ."
-      "aside2 .";
+      "sec1 sec1"
+      "sec2 sec2"
+      "sec3 sec3"
+      "aside1 aside1"
+      "aside2 aside2";
     height: 100%;
   }
   footer {
@@ -179,7 +179,7 @@ An example:
     display: grid;
     grid-template-rows: min-content auto min-content;
     grid-template-columns: repeat(2, 1fr);
-    grid-template-areas: "h ." "m ." "f .";
+    grid-template-areas: "h h" "m m" "f f";
     height: 100vh;
   }
   article {
@@ -190,11 +190,11 @@ An example:
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: min-content auto min-content;
     grid-template-areas:
-      "sec1 ."
-      "sec2 ."
-      "sec3 ."
-      "aside1 ."
-      "aside2 .";
+      "sec1 sec1"
+      "sec2 sec2"
+      "sec3 sec3"
+      "aside1 aside1"
+      "aside2 aside2";
     height: 100%;
   }
   footer {
