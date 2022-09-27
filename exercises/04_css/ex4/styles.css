@@ -78,17 +78,6 @@ An example:
 
 */
 
-/* header {
-  grid-area: header;
-}
-
-main {
-  grid-area: main;
-}
-
-footer {
-  grid-area: footer;
-} */
 
 #sec1 {
   grid-area: sec1;
