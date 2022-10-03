@@ -6,6 +6,20 @@
  */
 function sortTableByColumn(col, table) {
   // TODO: Implement this function as instructed
+  const tBody = table.tBodies[0];
+  const rows = Array.from(tBody.querySelectorAll("tr"));
+
+  const sortedRows = rows.sort((a, b) => {
+    const aColumnValue = a
+      .querySelector(`td:nth-child(${col + 1})`)
+      .textContent.trim();
+
+    const bColumnValue = b
+      .querySelector(`td:nth-child(${col + 1})`)
+      .textContent.trim();
+
+    return aColumnValue.localeCompare(bColumnValue);
+  });
 }
 
 /**
@@ -19,11 +33,11 @@ function sortTableByColumn(col, table) {
  */
 
 // find the table element
-const table = document.getElementById('sortable');
+const table = document.getElementById("sortable");
 
 // attach an event listener to each th element's click event
-table.querySelectorAll('thead th').forEach((th, i) =>
-  th.addEventListener('click', () => {
+table.querySelectorAll("thead th").forEach((th, i) =>
+  th.addEventListener("click", () => {
     sortTableByColumn(i, table);
   })
 );
