@@ -20,6 +20,12 @@ function sortTableByColumn(col, table) {
 
     return aColumnValue.localeCompare(bColumnValue);
   });
+
+  while (tBody.firstChild) {
+    tBody.removeChild(tBody.firstChild);
+  }
+
+  tBody.append(...sortedRows);
 }
 
 /**
