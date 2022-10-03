@@ -1,0 +1,44 @@
+[
+  {
+    "name": "Small Metal Mouse",
+    "description": "The slim & simple Maple Gaming Keyboard from Dev Byte comes with a sleek body and 7- Color RGB LED Back-lighting for smart functionality",
+    "price": "1.44",
+    "numberInStock": 992
+  },
+  {
+    "name": "Generic Wooden Chips",
+    "description": "New ABC 13 9370, 13.3, 5th Gen CoreA5-8250U, 8GB RAM, 256GB SSD, power UHD Graphics, OS 10 Home, OS Office A & J 2016",
+    "price": "20.41",
+    "numberInStock": 1
+  },
+  {
+    "name": "Rustic Wooden Pizza",
+    "description": "The Football Is Good For Training And Recreational Purposes",
+    "price": "21.82",
+    "numberInStock": 94
+  },
+  {
+    "name": "Fantastic Frozen Chicken",
+    "description": "New range of formal shirts are designed keeping you in mind. With fits and styling that will make you stand apart",
+    "price": "22.90",
+    "numberInStock": 151
+  },
+  {
+    "name": "Handmade Concrete Table",
+    "description": "Carbonite web goalkeeper gloves are ergonomically designed to give easy fit",
+    "price": "20.74",
+    "numberInStock": 716
+  },
+  {
+    "name": "Generic Rubber Keyboard",
+    "description": "The automobile layout consists of a front-engine design, with transaxle-type transmissions mounted at the rear of the engine and four wheel drive",
+    "price": "23.12",
+    "numberInStock": 301
+  },
+  {
+    "name": "Practical Granite Sausages",
+    "description": "New range of formal shirts are designed keeping you in mind. With fits and styling that will make you stand apart",
+    "price": "0.08",
+    "numberInStock": 414
+  }
+]
