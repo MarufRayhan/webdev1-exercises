@@ -34,6 +34,7 @@ function changeRollButton(template) {
 
 document.addEventListener("rollDice", function (e) {
   diceValue = e.detail.value;
+  console.log(diceValue);
 
   if (diceValue === 1) {
     DICE_ONE.textContent = diceValue;
@@ -64,5 +65,5 @@ document.addEventListener("rollDice", function (e) {
   }
 
   let totalCount = document.querySelector("#totals").querySelector("span");
-  totalCount.innerHTML = diceValue;
+  totalCount.innerHTML = COUNT;
 });
