@@ -18,6 +18,13 @@ const DICE_SIX = document.getElementById("sixes").childNodes[3];
 const ELEMENT_FRAGMENT_6 = document.getElementById("template6").content;
 
 COUNT = 0;
+COUNT_1 = 0;
+COUNT_2 = 0;
+COUNT_3 = 0;
+COUNT_4 = 0;
+COUNT_5 = 0;
+COUNT_6 = 0;
+
 // const alldots = Array.from(document.querySelectorAll("#rolls div"));
 
 const dice = document
@@ -37,27 +44,33 @@ document.addEventListener("rollDice", function (e) {
   console.log(diceValue);
 
   if (diceValue === 1) {
-    DICE_ONE.textContent = diceValue;
+    COUNT_1++;
+    DICE_ONE.textContent = COUNT_1;
     var template = document.importNode(ELEMENT_FRAGMENT_1, true);
     changeRollButton(template);
   } else if (diceValue === 2) {
-    DICE_TWO.textContent = diceValue;
+    COUNT_2++;
+    DICE_TWO.textContent = COUNT_2;
     var template = document.importNode(ELEMENT_FRAGMENT_2, true);
     changeRollButton(template);
   } else if (diceValue === 3) {
-    DICE_THREE.textContent = diceValue;
+    COUNT_3++;
+    DICE_THREE.textContent = COUNT_3;
     var template = document.importNode(ELEMENT_FRAGMENT_3, true);
     changeRollButton(template);
   } else if (diceValue === 4) {
-    DICE_FOUR.textContent = diceValue;
+    COUNT_4++;
+    DICE_FOUR.textContent = COUNT_4;
     var template = document.importNode(ELEMENT_FRAGMENT_4, true);
     changeRollButton(template);
   } else if (diceValue === 5) {
-    DICE_FIVE.textContent = diceValue;
+    COUNT_5++;
+    DICE_FIVE.textContent = COUNT_5;
     var template = document.importNode(ELEMENT_FRAGMENT_5, true);
     changeRollButton(template);
   } else if (diceValue === 6) {
-    DICE_SIX.textContent = diceValue;
+    COUNT_6++;
+    DICE_SIX.textContent = COUNT_6;
     var template = document.importNode(ELEMENT_FRAGMENT_6, true);
     changeRollButton(template);
   } else {
