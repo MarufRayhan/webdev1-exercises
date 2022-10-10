@@ -7,9 +7,13 @@
  * be 'Parameter is not a number!'
  * @returns a new Promise, which resolves to the parameter value
  */
-const f = (value) => {
-  throw "Not yet implemented!";
-}
+const f = async (value) => {
+  if (!isNaN(value)) {
+    return value;
+  } else {
+    throw "Parameter is not a number!";
+  }
+};
 
 /**
  * TODO: Implement an async function 'g' that calls the previously made async function 'f'.
@@ -17,22 +21,47 @@ const f = (value) => {
  * Handle exceptions gracefully by returning the thrown error message with catch().
  * @param {number} value
  */
-const g = (value) => {
-  throw "Not yet implemented!";
-}
 
+const g = (value) => {
+  return f(value)
+    .then((data) => {
+      return Math.log(data);
+    })
+    .catch((err) => {
+      "err";
+    });
+};
 /**
  * TODO: Implement an async function 'checkIfFunction'.
  * The function checks the type of a parameter. typeof is useful here.
  * However, since we are now practicing
  * Promises, the value is returned as a "promisified" value
  * @param {*} param the value is checked to be a function
- * @returns resolved Promise with value true if parameter is a function or 
+ * @returns resolved Promise with value true if parameter is a function or
  * a rejected Promise with message "Not a function!" otherwise
  */
+
+// const checkIfFunction = (param) => {
+//   throw "Not yet implemented!";
+// };s
+
+// const checkIfFunction = (param) => {
+//   return new Promise((resolve, reject) => {
+//     if (typeof param === "function") {
+//       resolve(value);
+//     } else {
+//       reject(new Error("Not a function!"));
+//     }
+//   });
+// };
+
 const checkIfFunction = (param) => {
-  throw "Not yet implemented!";
-}
+  if (param instanceof Function) {
+    return true;
+  } else {
+    throw "Not a function!";
+  }
+};
 
 /**
  * TODO: Implement a function 'p' that returns a resolved Promise after a given time.
@@ -41,8 +70,29 @@ const checkIfFunction = (param) => {
  * @param {number} time
  * @returns {an empty Promise after a given time}, if time is acceptable
  */
+
+// const p = (time) => {
+//   throw "Not yet implemented!";
+// };
+
 const p = (time) => {
-  throw "Not yet implemented!";
+  return new Promise((resolve, reject) => {
+    // if the duration is negative, reject the promise immediately
+
+    setTimeout(function () {
+      return resolve();
+    }, time);
+
+    if (time > 2000) {
+      throw "Too long time!";
+    }
+    if (typeof time !== "number") {
+      throw "Not a number!";
+    }
+
+    // // resolve the promise when the wait is over
+    // setTimeout(resolve, time);
+  });
 };
 
 //TODO: verify that all functions exported below are available for tests (they should be)
@@ -50,6 +100,5 @@ exports.f = f;
 exports.g = g;
 exports.checkIfFunction = checkIfFunction;
 exports.p = p;
-
 
 // TODO: Run the tests with npm test
