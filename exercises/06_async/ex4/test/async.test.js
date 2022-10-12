@@ -84,6 +84,7 @@ describe('drawArrows()', function () {
     const lines = xmlDoc.getElementsByTagName("line");
     // console.log(svg);
     const len = lines.length;
+    console.log("line in test", len)
     expect(len).to.equal(2);
   });
 
