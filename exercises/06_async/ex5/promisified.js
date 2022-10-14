@@ -22,7 +22,12 @@ async function drawArrows(actors, timeout, drawArrow, i = 0) {
   //   return i < actors.length * 2 - 2 ? new Promise() : null;
 
   return i < actors.length * 2 - 2
-    ? new Promise((resolve, reject) => setTimeout(resolve, timeout))
+    ? new Promise((resolve, reject) => {
+        resolve(drawArrow(i, timeout, actors.length - 1));
+        setTimeout(
+          () => (drawArrows(actors, timeout, drawArrow, i + 1), timeout)
+        );
+      })
     : null;
 }
 
