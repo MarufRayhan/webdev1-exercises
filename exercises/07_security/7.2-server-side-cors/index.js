@@ -5,23 +5,37 @@ http
   .createServer((req, res) => {
     const headers = {
       "Access-Control-Allow-Origin": "*",
-      "Access-Control-Allow-Methods": "OPTIONS, POST, GET",
-      "Access-Control-Max-Age": 2592000,
+      "Access-Control-Allow-Methods": "GET, POST, OPTIONS, PUT, PATCH, DELETE",
+      "Access-Control-Max-Age": 7200,
     };
 
+    const originName = req.headers["origin"];
+
+    if (!req.headers[originName]) {
+      res.writeHead(400);
+      res.end("Origin header not in the request");
+      return;
+    }
+
     if (req.method === "OPTIONS") {
-      res.writeHead(204, headers);
+      res.writeHead(200, headers);
+      res.end();
+      return;
+    }
+
+    if (["HEAD"].indexOf(req.method) > -1) {
+      res.writeHead(200, headers);
       res.end();
       return;
     }
 
     if (["GET", "POST"].indexOf(req.method) > -1) {
       res.writeHead(200, headers);
-      res.end();
+      res.end("I was requested using CORS!");
       return;
     }
 
-    res.writeHead(405, headers);
+    res.writeHead(200, headers);
     res.end(`${req.method} is not allowed for the request.`);
 
     // TODO: handle HEAD HTTP method,
