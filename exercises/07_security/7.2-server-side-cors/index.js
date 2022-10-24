@@ -5,41 +5,24 @@ http
   .createServer((req, res) => {
     const headers = {
       "Access-Control-Allow-Origin": "*",
-      "Access-Control-Allow-Methods": "GET, POST, PUT, HEAD, OPTION",
-      "Access-Control-Allow-Headers": "Content-Type",
-      "Access-Control-Max-Age": 1728000,
+      "Access-Control-Allow-Methods": "OPTIONS, POST, GET",
+      "Access-Control-Max-Age": 2592000,
     };
 
-    // TODO: check that Origin header is set in the request
-    // You can access the header with req.headers['origin']
-    const resHeader = req.headers["origin"];
-    console.log(req.headers["origin"]);
-    // You can check if a header is present in request headers with if(!req.headers['yourHeaderNameHere']){..
+    if (req.method === "OPTIONS") {
+      res.writeHead(204, headers);
+      res.end();
+      return;
+    }
 
-    if (!req.headers[resHeader]) {
-      res.stausCode = 400;
-      res.statusMessage = "Origin header not in the request";
-    }
-    // TODO: handle GET and POST HTTP methods
-    // You can use req.method to access the request method
-    // remember to add CORS headers to response, you can use writeHead() here
-    if (req.method === "GET" || req.method === "POST") {
-      res.writeHead(200, {
-        "Access-Control-Allow-Methods": "GET, POST, PUT, HEAD",
-      });
-      res.end();
-      return;
-    } else if (req.method === "OPTION") {
-      res.writeHead(
-        "Access-Control-Allow-Methods",
-        "GET",
-        "PUT",
-        "POST",
-        "DELETE"
-      );
+    if (["GET", "POST"].indexOf(req.method) > -1) {
+      res.writeHead(200, headers);
       res.end();
       return;
     }
+
+    res.writeHead(405, headers);
+    res.end(`${req.method} is not allowed for the request.`);
 
     // TODO: handle HEAD HTTP method,
     // remember to add CORS headers to response
